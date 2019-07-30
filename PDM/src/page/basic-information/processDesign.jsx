@@ -18,27 +18,7 @@ class ProcessDesign extends React.Component{
     componentDidMount(){
         // this.loadOrderDetail();
     }
-    // 加载商品详情
-    loadOrderDetail(){
-        _order.getOrderDetail(this.state.orderNumber).then((res) => {
-            this.setState({
-                orderInfo : res
-            });
-        }, (errMsg) => {
-            _mm.errorTips(errMsg);
-        });
-    }
-    // 发货操作
-    onSendGoods(){
-        if(window.confirm('是否确认该订单已经发货？')){
-            _order.sendGoods(this.state.orderNumber).then((res) => {
-                _mm.successTips('发货成功');
-                this.loadOrderDetail();
-            }, (errMsg) => {
-                _mm.errorTips(errMsg);
-            });
-        }
-    }
+    
     render(){
         return (
             <div id="page-wrapper" style={{padding:"0"}}>
